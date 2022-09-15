@@ -68,7 +68,7 @@ De hecho, la mayoría de los autores proponen el uso de Modelos Ocultos de Marko
 
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]\caption{\label{fig:tesla}{Figura1.jpg}Representación gráfica de un HMM.}
+\includegraphics[width=0.5\textwidth]\caption{\label{fig:Figura1}Representación gráfica de un HMM.}
 \end{figure}
 
 Los HMM, sin embargo, son inútiles para modelar ciertas actividades concurrentes, por lo que otros autores han reportado una nueva técnica llamada Campo Condicional Aleatorio (CRF). Los FCI se emplean para modelar aquellas actividades que presentan acciones concurrentes o, en general, múltiples acciones interactivas [12][13]. Además, HMM requiere un gran esfuerzo en el entrenamiento para descubrir todos los posibles estados ocultos. Para resolver estos problemas, el campo aleatorio condicional (CRF) emplea probabilidades condicionales en lugar de distribuciones de probabilidad conjunta. De esta manera, las actividades cuyas acciones se desarrollan en cualquier orden pueden modelarse fácilmente. A diferencia de las cadenas en HMM, CRF emplea gráficos acíclicos, y permite la integración de estados ocultos condicionales (estados que dependen de observaciones pasadas y/o futuras).
@@ -87,8 +87,20 @@ Con el fin de (i) hacer que el proceso de reconocimiento de patrones sea indepen
 
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]\caption{\label{fig:Figura2}{Figura2.jpg}Representación gráfica de un HMM.}
+\includegraphics[width=0.5\textwidth]\caption{\label{fig:Figura2}Arquitectura de la solución propuesta de reconocimiento de patrones.}
 \end{figure}
+
+La capa inferior incluye la plataforma de hardware. Dispositivos de monitoreo como acelerómetros, smartphones, sensores infrarrojos, etiquetas RFID, etc., se implementan para capturar información sobre el comportamiento de las personas. Las salidas de estos dispositivos crean secuencias físicas de datos cuyo formato, rango dinámico, etc., dependen totalmente de las tecnologías de hardware seleccionadas.
+Estas secuencias físicas de datos se procesan en la capa intermedia utilizando técnicas DTW. Como resultado, para cada secuencia física de datos, se reconoce un simple movimiento o acción. Estas acciones simples se representan utilizando un formato de datos binario para hacer la solución lo más ligera posible. El software a este nivel debe modificarse cada vez que se actualiza la plataforma de hardware, pero las tecnologías DTW no requieren un proceso de actualización pesado, y basta con actualizar el repositorio de patrones para configurar el algoritmo a este nivel.
+Los movimientos simples reconocidos, entonces, se agrupan para crear secuencias de datos lógicas. Estas secuencias alimentan un sistema de reconocimiento de patrones de alto nivel basado en modelos ocultos de Markov. En este nivel, los componentes de software requieren un intenso proceso de entrenamiento, pero la capa intermedia hace totalmente independientes la plataforma de hardware y los modelos de alto nivel. Por lo tanto, cualquier cambio en la plataforma de hardware no impone una actualización en el HMM, lo que resultaría muy costoso en términos de cálculo. Mediante el análisis de la secuencia de movimientos simples, se reconocen acciones complejas.
+En la subsección siguiente se describen detalladamente las dos fases propuestas de reconocimiento de patrones.
+
+\subsection{Reconocimiento de movimiento simple: Dynamic Time Warping}
+
+Para reconocer gestos o movimientos simples, se selecciona una solución Dynamic Time Warping. Las tecnologías DTW cumplen los requisitos de los componentes de software de nivel medio, ya que se adaptan fácilmente a las características de la plataforma de hardware subyacente y son bastante rápidas y eficientes (por lo que los pequeños dispositivos integrados pueden implementarlas).
+En nuestra solución, el comportamiento humano se monitoriza mediante una familia de sensores  $\delta$, que contienen componentes  $\delt$  (1).
+
+
 
 También pueden añadirse comentarios en el margen del pdf compilado con el comando todo \todo{¡Comment en el margen!}, como se muestra en el ejemplo de la derecha. También puedes añadirlos dentro del texto:
 
