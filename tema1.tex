@@ -1,0 +1,209 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Journal Article
+% LaTeX Template
+% Version 1.4 (15/5/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com) with extensive modifications by
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[twoside,twocolumn]{article}
+
+\usepackage{blindtext} % Package to generate dummy text throughout this template 
+
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+\usepackage[english]{babel} % Language hyphenation and typographical rules
+
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\roman{subsection}} % roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[C]{Running title $\bullet$ May 2016 $\bullet$ Vol. XXI, No. 1} % Custom header text
+\fancyfoot[RO,LE]{\thepage} % Custom footer text
+
+\usepackage{titling} % Customizing the title section
+
+\usepackage{hyperref} % For hyperlinks in the PDF
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\setlength{\droptitle}{-4\baselineskip} % Move the title up
+
+\pretitle{\begin{center}\Huge\bfseries} % Article title formatting
+\posttitle{\end{center}} % Article title closing formatting
+\title{Un algoritmo de dos fases para el reconocimiento de las actividades humanas en el contexto de la Industria 4. 0 y procesos} % Article title
+\author{%
+\textsc{Borja Bordel$^1$ , Ramón Alcarria$^1$, Diego Sánchez-de-Rivera$^1$} \\[1ex] % Your name
+\normalsize $^1$Universidad Politécnica de Madrid,
+Madrid, España \\ % Your institution
+\normalsize \href{mailto:bbordel@dit.upm.es, ramon.alcarria@upm.es, diegosanchez@dit.upm.es}{bbordel@dit.upm.es, ramon.alcarria@upm.es, diegosanchez@dit.upm.es} % Your email address
+%\and % Uncomment if 2 authors are required, duplicate these 4 lines if more
+%\textsc{Jane Smith}\thanks{Corresponding author} \\[1ex] % Second author's name
+%\normalsize University of Utah \\ % Second author's institution
+%\normalsize \href{mailto:jane@smith.com}{jane@smith.com} % Second author's email address
+}
+\date{\today} % Leave empty to omit a date
+\renewcommand{\maketitlehookd}{%
+\begin{abstract}
+\noindent \blindtext % Dummy abstract text - replace \blindtext with your abstract text
+\end{abstract}
+}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+% Print the title
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+\lettrine[nindent=0em,lines=3]{L} orem ipsum dolor sit amet, consectetur adipiscing elit.
+\blindtext % Dummy text
+
+\blindtext % Dummy text
+
+%------------------------------------------------
+
+\section{Methods}
+
+Maecenas sed ultricies felis. Sed imperdiet dictum arcu a egestas. 
+\begin{itemize}
+\item Donec dolor arcu, rutrum id molestie in, viverra sed diam
+\item Curabitur feugiat
+\item turpis sed auctor facilisis
+\item arcu eros accumsan lorem, at posuere mi diam sit amet tortor
+\item Fusce fermentum, mi sit amet euismod rutrum
+\item sem lorem molestie diam, iaculis aliquet sapien tortor non nisi
+\item Pellentesque bibendum pretium aliquet
+\end{itemize}
+\blindtext % Dummy text
+
+Text requiring further explanation\footnote{Example footnote}.
+
+%------------------------------------------------
+
+\section{Results}
+
+\begin{table}
+\caption{Example table}
+\centering
+\begin{tabular}{llr}
+\toprule
+\multicolumn{2}{c}{Name} \\
+\cmidrule(r){1-2}
+First name & Last Name & Grade \\
+\midrule
+John & Doe & $7.5$ \\
+Richard & Miles & $2$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\blindtext % Dummy text
+
+\begin{equation}
+\label{eq:emc}
+e = mc^2
+\end{equation}
+
+\blindtext % Dummy text
+
+%------------------------------------------------
+
+\section{Discussion}
+
+\subsection{Subsection One}
+
+A statement requiring citation \cite{Figueredo:2009dg}.
+\blindtext % Dummy text
+
+\subsection{Subsection Two}
+
+\blindtext % Dummy text
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+
+\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
+
+\bibitem[}
+1. Bordel, B., Alcarria, R., Sánchez-de-Rivera, D., & Robles, T. (2017, noviembre). Proteger los sistemas de la industria 4.0 contra los efectos maliciosos de los ataques ciberfísicos. En Conferencia Internacional sobre Computación Ubicua e Inteligencia Ambiental (págs. 161 a 171). Saltar, Cham.
+
+2. Bordel, B., Alcarria, R., Robles, T., & Martín, D. (2017). Sistemas ciberfísicos: Extender la detección omnipresente de la teoría del control al Internet de las Cosas. Computación generalizada y móvil, 40, 156-184.
+
+3. Neff, W. (2017). Trabajo y comportamiento humano. Routledge.
+
+4. Bordel, B., Alcarria, R., Martín, D., Robles, T., & de Rivera, D. S. (2017). Auto-
+configuración en sistemas ciberfísicos humanizados. Revista de Inteligencia Ambiental y
+Computación Humanizada, 8 (4), 485-496.
+
+5. Bordel, B., de Rivera, D. S., Sánchez-Picot, Á., & Robles, T. (2016). Procesos físicos
+control en los sistemas basados en la industria 4.0: un enfoque en los sistemas ciberfísicos. En Ubiquitous
+Computación e Inteligencia Ambiental (págs. 257-262). Saltar, Cham.
+
+6. Pal, S. K., & Wang, P. P. (2017). Algoritmos genéticos para el reconocimiento de patrones. La prensa del CRC.
+
+7. Müller, M. (2007). Deformación dinámica del tiempo. Recuperación de información para música y movimiento,
+69 y 84.
+
+8. Eddy, S. R. (1996). Modelos ocultos de Markov. Dictamen actual en biología estructural, 6 (3),
+361-365.
+
+9. Kim, E., Helal, S., y Cook, D. (2010). Reconocimiento de actividad humana y descubrimiento de patrones.
+IEEE Pervasive Computing/IEEE Computer Society [y] IEEE Communications
+Sociedad, 9 1), 48.
+
+10. Li, Z., Wei, Z., Yue, Y., Wang, H., Jia, W., Burke, L. E., ... & Sun, M. (2015). Un Modelo de markov oculto adaptable para el reconocimiento de actividad basado en un multi-sensor portátil
+dispositivo. Revista de sistemas médicos, 39 (5), 57.
+\newblock Assortative pairing and life history strategy - a cross-cultural
+  study.
+\newblock {\em Human Nature}, 20:317--330.
+ 
+\end{thebibliography}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
