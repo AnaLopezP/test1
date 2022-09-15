@@ -888,3 +888,43 @@ Ctrl-C to stop.
 [00mHosting "." on port 8000 without TLS and no authentication...
 Ctrl-C to stop.
 
+[00mHosting "." on port 8000 without TLS and no authentication...
+Ctrl-C to stop.
+
+[36m[2022-09-15 14:30:59][00m [32m172.18.0.1:34476[00m was served file [35m/home/runner/test1/index.html[00m as [34mtext/html[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[36m[2022-09-15 14:30:59][00m                            found index file for directory [35m/home/runner/test1[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[36m[2022-09-15 14:30:59][00m [32m172.18.0.1:34476[00m was served file [35m/home/runner/test1/main.pdf[00m as [34mapplication/pdf[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[36m[2022-09-15 14:30:59][00m Created temp dir [35m$TEMP/http-home-runner-test1/encoded[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[36m[2022-09-15 14:30:59][00m [32m172.18.0.1:47304[00m was served file [35m/home/runner/test1/index.html[00m as [34mtext/html[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[36m[2022-09-15 14:30:59][00m                            found index file for directory [35m/home/runner/test1[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[36m[2022-09-15 14:31:00][00m [32m172.18.0.1:47304[00m was served file [35m/home/runner/test1/main.pdf[00m as [34mapplication/pdf[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[00mHosting "." on port 8000 without TLS and no authentication...
+Ctrl-C to stop.
+
+[36m[2022-09-15 14:33:37][00m [32m172.18.0.1:60972[00m was served file [35m/home/runner/test1/main.pdf[00m as [34mapplication/pdf[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[36m[2022-09-15 14:33:38][00m [32m172.18.0.1:37702[00m was served file [35m/home/runner/test1/main.pdf[00m as [34mapplication/pdf[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[00mHosting "." on port 8000 without TLS and no authentication...
+Ctrl-C to stop.
+
+[36m[2022-09-15 14:36:42][00m [32m172.18.0.1:45730[00m was served file [35m/home/runner/test1/main.pdf[00m as [34mapplication/pdf[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[36m[2022-09-15 14:36:43][00m [32m172.18.0.1:43096[00m was served file [35m/home/runner/test1/main.pdf[00m as [34mapplication/pdf[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[00mHosting "." on port 8000 without TLS and no authentication...
+Ctrl-C to stop.
+
+[36m[2022-09-15 14:37:38][00m [32m172.18.0.1:36442[00m was served file [35m/home/runner/test1/main.pdf[00m as [34mapplication/pdf[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[36m[2022-09-15 14:37:38][00m [32m172.18.0.1:46800[00m was served file [35m/home/runner/test1/main.pdf[00m as [34mapplication/pdf[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[00mHosting "." on port 8000 without TLS and no authentication...
+Ctrl-C to stop.
+
+[36m[2022-09-15 14:38:56][00m [32m172.18.0.1:42506[00m was served file [35m/home/runner/test1/main.pdf[00m as [34mapplication/pdf[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[36m[2022-09-15 14:38:56][00m [32m172.18.0.1:55210[00m was served file [35m/home/runner/test1/main.pdf[00m as [34mapplication/pdf[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[00mHosting "." on port 8000 without TLS and no authentication...
+Ctrl-C to stop.
+
+[36m[2022-09-15 14:39:30][00m [32m172.18.0.1:37932[00m was served file [35m/home/runner/test1/main.pdf[00m as [34mapplication/pdf[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[36m[2022-09-15 14:39:30][00m [32m172.18.0.1:52320[00m was served file [35m/home/runner/test1/main.pdf[00m as [34mapplication/pdf[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[36m[2022-09-15 14:41:05][00m [32m172.18.0.1:41964[00m was served file [35m/home/runner/test1/index.html[00m as [34mtext/html[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[36m[2022-09-15 14:41:05][00m                            found index file for directory [35m/home/runner/test1[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[36m[2022-09-15 14:41:05][00m [32m172.18.0.1:41964[00m was served file [35m/home/runner/test1/main.pdf[00m as [34mapplication/pdf[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[36m[2022-09-15 14:41:06][00m [32m172.18.0.1:41964[00m requested to [31mGET[00m nonexistent entity [35m/home/runner/test1/favicon.ico[00m[30m[31m[32m[33m[34m[35m[36m[37m[00m
+[36m[2022-09-15 14:41:06][00m                            encoded as gzip for 519.4% ratio[30m[31m[32m[33m[34m[35m[36m[37m[00m
