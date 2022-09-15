@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Plantilla para un artículo en LaTeX en español.
+% Plantilla para un artículo en Latex en español.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -14,7 +14,7 @@
 \usepackage[T1]{fontenc}
 
 
-\input{hola.tex}
+\input{hola.pdf}
 %% Asigna un tamaño a la hoja y los márgenes
 \usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 
@@ -98,10 +98,33 @@ En la subsección siguiente se describen detalladamente las dos fases propuestas
 \subsection{Reconocimiento de movimiento simple: Dynamic Time Warping}
 
 Para reconocer gestos o movimientos simples, se selecciona una solución Dynamic Time Warping. Las tecnologías DTW cumplen los requisitos de los componentes de software de nivel medio, ya que se adaptan fácilmente a las características de la plataforma de hardware subyacente y son bastante rápidas y eficientes (por lo que los pequeños dispositivos integrados pueden implementarlas).
-En nuestra solución, el comportamiento humano se monitoriza mediante una familia de sensores  $\delta$, que contienen componentes  $\nu$ $_\delta$  (1).
+En nuestra solución, el comportamiento humano se monitoriza mediante una familia de sensores  \delta, que contienen componentes  $\nu$ $_\delta$  (1).
 
 \begin{equation}
+\delta = \{s_i, i = 1, ..., N_s\}
+\end{equation}
 
+
+\subsection{Reconocimiento de acción compleja: Modelos ocultos de Markov}
+
+El mecanismo propuesto anteriormente es muy útil para reconocer acciones sencillas, pero las actividades complejas implican un gran número de variables y requieren mucho más tiempo. Por lo tanto, la DTW tiende a volverse imprecisa, y se requieren modelos probabilísticos. De todos los modelos existentes, HMM es el más adecuado para escenarios industriales y procesos impulsados por el hombre.
+
+AQUI FALTA UN PARRAFO CON LA ECUACION
+
+Además, se hacen dos hipótesis: i) la hipótesis de Markov (14), según la cual cualquier Estado depende únicamente del anterior; y ii) la hipótesis de la independencia (15), según la cual cualquier secuencia de observación depende únicamente del Estado actual y no de estados u observaciones anteriores.
+
+FORMULA
+
+Para evaluar el modelo y reconocer la actividad que realizan los usuarios, en este trabajo utilizamos un enfoque tradicional (16). Aunque los algoritmos de avance han demostrado ser más eficientes, para este trabajo inicial estamos implementando directamente la expresión de evaluación en su forma tradicional.
+
+FORMULA
+
+El proceso de aprendizaje también se aplicó de la manera más sencilla. Se emplearon definiciones estadísticas para matriz transitoria, matriz de observación y matriz de probabilidad inicial. En particular, se utilizó la definición de probabilidad de Laplace para estimar estas tres matrices a partir de estadísticas sobre las actividades estudiadas (17-19). El operador count(∙) indica el número de veces que ocurre un evento.
+
+FORMULA(17)
+
+
+\section{Validación experimental: aplicación y resultados}
 
 También pueden añadirse comentarios en el margen del pdf compilado con el comando todo \todo{¡Comment en el margen!}, como se muestra en el ejemplo de la derecha. También puedes añadirlos dentro del texto:
 
