@@ -68,20 +68,27 @@ De hecho, la mayoría de los autores proponen el uso de Modelos Ocultos de Marko
 
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]{Figura1.jpg}Representación gráfica de un HMM.}
+\includegraphics[width=0.5\textwidth]\caption{\label{fig:tesla}{Figura1.jpg}Representación gráfica de un HMM.}
 \end{figure}
 
+Los HMM, sin embargo, son inútiles para modelar ciertas actividades concurrentes, por lo que otros autores han reportado una nueva técnica llamada Campo Condicional Aleatorio (CRF). Los FCI se emplean para modelar aquellas actividades que presentan acciones concurrentes o, en general, múltiples acciones interactivas [12][13]. Además, HMM requiere un gran esfuerzo en el entrenamiento para descubrir todos los posibles estados ocultos. Para resolver estos problemas, el campo aleatorio condicional (CRF) emplea probabilidades condicionales en lugar de distribuciones de probabilidad conjunta. De esta manera, las actividades cuyas acciones se desarrollan en cualquier orden pueden modelarse fácilmente. A diferencia de las cadenas en HMM, CRF emplea gráficos acíclicos, y permite la integración de estados ocultos condicionales (estados que dependen de observaciones pasadas y/o futuras).
+Los CRF, por otro lado, siguen siendo inútiles para modelar ciertos comportamientos, por lo que algunas propuestas generalizan este concepto y proponen el campo aleatorio condicional de la cadena de saltar (SCCRF). El SCCRF es una técnica de reconocimiento de patrones, más general que el CRF, que permite modelar actividades que no son secuenciales de acciones en la naturaleza [14]. Esta técnica trata de capturar dependencias de largo alcance (saltar cadenas); y puede entenderse como el producto de diferentes cadenas lineales. Sin embargo, el cálculo de esteproducto es bastante pesado y complicado, por lo que esta técnica suele ser demasiado costosa para ser implementada en pequeños sistemas embebidos.
+Otras propuestas emplean técnicas de descripción de mayor nivel, como Emerging Patterns (EP). Para la mayoría de los autores, EP es una técnica que describe actividades como vectores de parámetros y sus valores correspondientes (localización, objeto, etc.) [15]. Utilizando distancias entre vectores es posible calcular y reconocer acciones desarrolladas por las personas. Por último, otros autores han utilizado con éxito técnicas secundarias como los clasificadores bayesianos [16], que identifican actividades que corresponden entre las actividades humanas y las salidas más probables de los sensores mientras se realizan estas acciones, considerando que todos los sensores son independientes. Árboles de decisión [17], extensiones de HMM [18] y otras tecnologías similares también han sido estudiadas en la literatura, aunque estas propuestas son escasas.
+De todas las tecnologías descritas, HMM no es la más potente. Sin embargo, encaja perfectamente con la Industria 4.0, donde las acciones son muy complejas pero muy estructuradas y ordenadas (según protocolos de la empresa, políticas de eficiencia, etc.). Además, se requiere una retroalimentación rápida (a veces incluso en tiempo real) para garantizar que los procesos impulsados por el hombre funcionen correctamente antes de que se produzca un fallo crítico global. Por lo tanto, las soluciones computacionalmente costosas no son un enfoque válido, y estamos seleccionando HMM como tecnología base principal. Para preservar su ligereza y, al mismo tiempo, poder modelar actividades complejas, introducimos un sistema de reconocimiento en dos fases que permite dividir acciones complejas en dos fases más sencillas.
 
-\subsection{¿Cómo añadir comentarios?}
-% * <stephmigoni@gmail.com> 2018-02-08T19:23:33.559Z:
+\section{Un algoritmo de reconocimiento de patrones en dos fases}
 % 
-% Esto es un comentario de prueba
+% 
+% 
 % 
 % 
 
-Puedes añadir comentarios en el ícono + del menú de arriba.
+Con el fin de (i) hacer que el proceso de reconocimiento de patrones sea independiente de los dispositivos de hardware empleados para captar información, (ii) permitir el reconocimiento de acciones complejas, y (iii) preservar el carácter ligero de los modelos seleccionados, la solución propuesta presenta una arquitectura con tres capas diferentes (véase la figura 2).
 
-Para responder a un comentario, simplemente da click en Reply en Rich Text.
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]\caption{\label{fig:Figura2}{Figura2.jpg}Representación gráfica de un HMM.}
+\end{figure}
 
 También pueden añadirse comentarios en el margen del pdf compilado con el comando todo \todo{¡Comment en el margen!}, como se muestra en el ejemplo de la derecha. También puedes añadirlos dentro del texto:
 
