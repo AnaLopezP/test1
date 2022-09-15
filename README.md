@@ -10,7 +10,7 @@ Para crear una intergración real entre las personas y la tecnología, y mover e
 El uso de Inteligencia Artificial, modelos estadísticos y otras herramientas similares han permitido un desarrollo real e increible en el reconocimiento de patrones, aunque aún quedan pendientes algunos desafíos. 
 Primero, las técnicas de reconocimiento de patrones dependen del hardware subyacente para la captura de información. La estructura y el proceso de aprendizaje cambia si, (por ejemplo), en vez de acelerómetros consideramos sensores infrarojos. Esto es bastante problemático, ya que las tecnologías de hardware avanzan mucho mas rápido que las soluciones de software. 
 Y, segundo, hay un limite de precision en el proceso de reconocimiento. De hecho, así como las acciones humanas se complican, más variables y modelos más complejos se necesitan para reconocerlas. Este enfoque causa grandes problemas de optimización, cuyo error residual incrementa al igual que incrementa el numero de variables; lo que produce un decrecimiento en la tasa de reconocimiento del éxito [6]. En conclusión, las matemáticas (no el software, por tanto, no depende de la implementación) fuerzan una cierta precisión para el patrón de proceso de reconocimiento dadas las acciones a estudiar. Para evitar esta situación, se deberían de considerar un menor numero de variables, pero esto tambien reduce la complejidad de las acciones que se pudieran analizar; una solución no aceptable en escenarios industriales, donde se desarrollan actividades complejas de producción. 
-Por lo tanto, el objetivo de este papel es describir un nuevo algoritmo de patrón de reconocimiento
+Por lo tanto, el objetivo de este papel es describir un nuevo algoritmo de patrón de reconocimiento abordando estos dos problemas básicos. 
 
 
 #TRADUCCION PAG 3#
@@ -21,4 +21,4 @@ De hecho, la mayoría de los autores proponen el uso de los modelos de Hidden Ma
 
 (Figura 1. Representación gráfica de un HMM)
 
-Sin embargo, HMM, son inútiles para modeliza ciertas actividades concurrentes, por tanto, los autores han reportado una nueva técnica llamada, Campo aleatorio Condicional (CRF). CRF se emplean para modelizar esas actividades que presentan acciones concurrentes o, en general, muchas acciones interactivas [12][13]. Además, HMM requiere un gran esfuerzo en el trabajo
+Sin embargo, HMM, son inútiles para modeliza ciertas actividades concurrentes, por tanto, los autores han reportado una nueva técnica llamada, Campo aleatorio Condicional (CRF). CRF se emplean para modelizar esas actividades que presentan acciones concurrentes o, en general, muchas acciones interactivas [12][13]. Además, HMM requiere un gran esfuerzo en el trabajo de descubrir 
