@@ -8,7 +8,7 @@
 \usepackage[T1]{fontenc}
 
 
-\input{hola.pdf}
+\input{main.pdf}
 %% Asigna un tamaño a la hoja y los márgenes
 \usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 
@@ -92,12 +92,64 @@ En la subsección siguiente se describen detalladamente las dos fases propuestas
 \subsection{Reconocimiento de movimiento simple: Dynamic Time Warping}
 
 Para reconocer gestos o movimientos simples, se selecciona una solución Dynamic Time Warping. Las tecnologías DTW cumplen los requisitos de los componentes de software de nivel medio, ya que se adaptan fácilmente a las características de la plataforma de hardware subyacente y son bastante rápidas y eficientes (por lo que los pequeños dispositivos integrados pueden implementarlas).
-En nuestra solución, el comportamiento humano se monitoriza mediante una familia de sensores  \delta, que contienen componentes  $\nu$ $_\delta$  (1).
+En nuestra solución, el comportamiento humano se monitoriza mediante una familia de sensores $\delta$, que contienen componentes  $\nu_delta$  (1).
 
 \begin{equation}
 \delta = \{s_i, i = 1, ..., N_s\}
 \end{equation}
+Las salidas de estos sensores se muestrean periódicamente cada T_s, segundos; obteniendo
+para cada instante de tiempo, t, un vector de valores N_s (cada valor de cada sensor). Esto
+el vector Y_t se denomina «muestra multidimensional». (2) 
+\begin{equation}
+  Y_t = \{y_t^i, i = 1, ..., N_s\}
+\end{equation}
 
+Entonces, un simple movimiento Y tendrá una duración de T_m segundos y será
+descrito por la secuencia temporal de muestras multidimensionales de N_m recogidas durante este tiempo (3). Para reconocer movimientos más tarde, se crea un repositorio de patrones $\real$ que contiene las secuencias temporales correspondientes para cada una de las acciones simples $\Kappa$ que deben reconocerse. (4) 
+
+\begin{equation}
+  Y = \{Y_t, t = 1, ..., T_m\} = \{Y^i, i = 1, ..., N_m\}
+\end{equation}
+\begin{equation}
+  \Re = \{R_i, i = 1, ..., K\}
+\end{equation}
+
+En general, las personas realizan movimientos de maneras similares pero diferentes. Así pues, las transiciones pueden ser más lentas o más rápidas, pueden añadirse o suprimirse algunas acciones elementales, etc. Por lo tanto, dada una secuencia $\Chi$ con muestras Ny, que representa un movimiento a reconocer, debe estar localizado el patrón R; E R más cerca de X; por lo tanto R; se reconoce como la acción realizada. Para ello se define una función de distancia (5). Esta distancia función se puede aplicar para calcular una matriz de costos, requerido como muestras por lo general no
+tienen la misma longitud ni están alineados (6).
+
+\begin{equation}
+  d: \mathcal{F} \times \mathcal{F} \rightarrow \mathbb{R},    X^i , r_j^i \in \mathcal{F}
+\end{equation}
+
+\begin{equation}
+  C \in \mathbb(R)^(N_x \times N_m)  C(n,m) = d(X^n, R_j^m)
+\end{equation}
+
+En los sensores posicionales (acelerómetros, dispositivos infrarrojos, etc.), la función de distancia se aplica directamente a las salidas de los sensores (contrariamente, por ejemplo, a los micrófonos cuyas salidas deben evaluarse en el ámbito de la potencia). Aunque se pueden emplear otras funciones de distancia (la divergencia simétrica de Kullback-Leibler o la distancia de Manhattan), para este primer trabajo estamos empleando la distancia euclidiana estándar (7)
+
+\begin{equation}
+  d(X^n, R_j^m) = \sqrt{\sum_{i=1}^{N_s}(x_i^n - r_i^(m,j))^2}
+\end{equation}
+
+Entonces, se define un camino de curvatura p = (p_1, p_2, .., p_L) como una secuencia de pares (n_L,m_L) con (n_L,m_L)  € [1, N_x]x[1, N_m] y l$/isin$[1, L], satisfaciendo tres condiciones: (i)la condición límite, por ejemplo, p_1=[1,1] y p_L=[N_x,N_m]; (ii) la
+condición de monotonicidad, por ejemplo, n_1≤n_2≤...≤n_L, y m_1≤m_2≤...≤m_L, y (iii) 
+la condición de tamaño del escalón, por ejemplo, p_l–p_(L-1) $/isin$ {(1,0),(0,1),(1,1)} con l$/isin$[1, L–1].
+Entonces, el coste total de una trayectoria de curvatura p_i se calcula sumando todos los costes parciales o distancias (8). Con todo esto, la distancia entre dos secuencias de datos $\real$_1 y $\Kappa$ está definida como el coste (distancia) de la trayectoria de curvatura óptima p* (9).
+
+\begin{equation}
+  d_p_i(X, R_j) = \sum_{l=1}^{L}d(X^n_l, R_j^m_l)
+\end{equation}
+
+\begin{equation}
+  d_DTW(X,R_j) = d_p^\ast(X, R_j) = min\{d_p_i (X,R_j), siendo p_i un camino deformado\}
+
+\end{equation}
+
+Finalmente, el simple movimiento reconocido a partir de la secuencia de datos X es aquel cuyo
+patrón R, tiene la distancia más pequeña (es la más cercana) a X. El uso de esta definición es
+tolerante a las variaciones de velocidad en la ejecución del movimiento, a la introducción de nuevos
+microgestos, etc. Además, como se puede ver, cuando una tecnología de hardware diferente es
+implementado, basta con actualizar el repositorio de patrones R para reconfigurar toda la solución de reconocimiento de patrones (ya que no se requiere formación).
 
 \subsection{Reconocimiento de acción compleja: Modelos ocultos de Markov}
 
