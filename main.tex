@@ -132,15 +132,37 @@ Se definió y reconoció una lista de doce actividades complejas diferentes util
 
 %Vamos a crear la tabla.
 
+\begin{table}[t]
+\begin{center}
+\begin{tabular}{ | m{2cm} | m{5cm} | }
+\hline Actividad & Descripcion \\ \hline
+Dibujar los caminos del circuito & El circuito a imprimir se diseña utilizando un programa informático específico para PC. \\ \hline
+Imprimir el diseño del circuito usando un plotter & Utilizando lámina de plástico y una impresora especial llamada plotter, se imprime el diseño del circuito. \\ \hline
+Limpiar el laminado de cobre de las tablas & Utilizando un producto especial se eliminan todo el polvo y las partículas del laminado de la cara de cobre. \\ \hline
+Copiar el diseño del circuito en placas de cooper & El diseño del circuito en la lámina de plástico se copia en el laminado de cooper utilizando una ráfaga de luz UV.\\ \hline
+Sumergir las tablas en la piscina de ácido & Para eliminar todo el cobre no deseado, la placa impresa se sumerge en un baño ácido.\\ \hline
+Lavar el tonel con un baño de disolvente & Después del baño ácido, el resto de la superficie de cobre se lava en un baño de disolvente.\\ \hline
+Alineación de capas & Los PCB se componen de varias capas; apilados y alineados durante esta fase.\\ \hline
+Inspección óptica & Usando un láser, se comprueba la alineación de la capa.\\ \hline
+Unir las capas exteriores con el sustrato & Utilizando un pegamento epoxi, se unen la capa final y la capa exterior de la placa.\\ \hline
+Atar la junta & La unión se produce sobre una mesa de acero pesada con abrazaderas metálicas.\\ \hline
+Perforar los agujeros necesarios & Se perforan agujeros para componentes, etc., en la pizarra.\\ \hline
+Chapado & En un horno, la tabla está acabada.\\ \hline
+
+\end{tabular}
+\end{center}
+\end{table}
+
 \begin{table}
 \centering
-\begin{tabular}{l c r} 
-%nùmero de columnas: 2
+\caption{\label{tab:tabla ejemplo}Descrpcion de actividades complejas.}
+\begin{tabular}{l r} 
+%número de columnas: 2
 Actividad & Descripción \\ \hline
 Ejemplo & Centrado & Alineado a la\\
 Izquierda & 13 & Derecha
 \end{tabular}
-\caption{\label{tab:tabla ejemplo}Descrpcion de actividades complejas.}
+
 \end{table}
 
 Participaron en el experimento dieciocho personas (18). Se pidió a las personas que realizaran las actividades en un número aleatorio. El orden real, así como el orden en que se reconocen las actividades, fueron almacenados por un proceso de software de supervisión. Se evaluó la tasa global de éxito de toda la solución, identificando (además) la misma tasa para cada una de las fases existentes.
@@ -155,106 +177,20 @@ La Figura 4 representa la tasa media de éxito de tres casos: la solución globa
 
 \section{Conclusiones y Futuros Trabajos}
 
-\LaTeX{} es buenísimo para escribir ecuaciones. Para escribir variables o ecuaciones dentro del texto lo podemos poner entre signos de pesos y luego podemos seguir escribiendo, esto funciona si queremos escribir un símbolo como $\nabla$, $\pi$, $\beta$, $\Omega$, $\aleph$, etc.
-\begin{equation}
-\sum_{n=0}^\infty \frac{x^n}{n!}=e^x
-\end{equation}
-\begin{equation}
-\int_{0}^{1}dx=1
-\end{equation}
-\begin{equation}
-e^{i\pi}+1=0
-\end{equation}
-Si queremos citar al gran Maxwell, lo podemos hacer como en la ecuación \ref{eq:Maxwell}:
-\begin{equation}
-\nabla\times\mathbf{E}+\frac{\partial\mathbf{B}}{\partial t}=0\label{eq:Maxwell}
-\end{equation}
+En este trabajo presentamos un nuevo algoritmo de reconocimiento de patrones para integrar a las personas en los sistemas de la Industria 4.0 y los procesos impulsados por el hombre. El algoritmo define actividades complejas como composiciones de movimientos simples. Las actividades complejas se reconocen utilizando modelos de Markov ocultos, y los movimientos simples se reconocen utilizando Dynamic Time Warping. Para permitir la implementación de este algoritmo en pequeños dispositivos embebidos, se seleccionan configuraciones ligeras. También se lleva a cabo una validación experimental y los resultados muestran una mejora global de la tasa de éxito en torno al 9$\%$
+En los trabajos futuros se considerarán las metodologías más complejas para el procesamiento de datos, y se evaluará la comparación de las diferentes configuraciones del algoritmo propuesto. Además, la propuesta se analizará en diferentes escenarios.
 
-A continuación se añade un ejemplo de un desarrollo:
-Con este preámbulo llevamos a cabo la siguiente transformación de los operadores $\hat{a}_{\ell}$
+\begin{abstract}
+\centering
+Agradecimientos. La investigación que ha dado lugar a estos resultados ha recibido financiación del Ministerio de Economía y Competitividad a través del proyecto SEMOLA (TEC2015-68 284-R) y del Ministerio de Ciencia, Innovación y Universidades a través del proyecto VACADENA (RTC-2017-6031-2).
+\end{abstract}
 
-\begin{equation}
-\hat{b}_{m}^{\dagger}=\sum_{\ell}U_{m}^{\ell}\hat{a}_{\ell}^{\dagger}
-\end{equation}
 
-donde $U_{m}^{\ell}$ es un elemento de la matriz unitaria $\mathbf{U}$.
 
-Calculamos ahora su hermitiano conjugado
-\begin{align}
-\hat{b}_{m} & =\left(\sum_{\ell}U_{m}^{\ell}\hat{a}_{\ell}^{\dagger}\right)^{\dagger}\label{eq:bm}\\
- & =\sum_{\ell}\left(U_{m}^{\ell}\hat{a}_{\ell}^{\dagger}\right)^{\dagger}\nonumber \\
- & =\sum_{\ell}\left(U_{m}^{\ell}\right)^{*}\hat{a}_{\ell}\nonumber \\
- & =\sum_{\ell}\left(U^{-1}\right)_{\ell}^{m}\hat{a}_{\ell},\label{eq:bSubM}
-\end{align}
-
-Ahora, para añadir una matriz:
-
-$$
-\begin{matrix} 
-a & b \\
-c & d 
-\end{matrix}
-\quad
-\begin{pmatrix} 
-a & b \\
-c & d 
-\end{pmatrix}
-\quad
-\begin{bmatrix} 
-a & b \\
-c & d 
-\end{bmatrix}
-\quad
-\begin{vmatrix} 
-a & b \\
-c & d 
-\end{vmatrix}
-\quad
-\begin{Vmatrix} 
-a & b \\
-c & d 
-\end{Vmatrix}
-$$
-%% Por ejemplo, el triple producto escalar:
-\begin{equation}
-\vec{A}\cdot(\vec{B}\times\vec{C})=\begin{vmatrix}
-A_x&A_y&A_z\\
-B_x&B_y&B_z\\
-C_x&C_y&C_z\\
-\end{vmatrix}
-\end{equation}
-
-\subsection{¿Cómo añadir listas?}
-
-Puedes añadir listas con numeración automática \dots
-
-\begin{enumerate}
-\item Como esta,
-\item y como esta.
-\end{enumerate}
-\dots o con puntitos \dots
-\begin{itemize}
-\item Como este,
-\item y como este.
-\end{itemize}
-
-\subsection{¿Cómo añado una lista de Citas y Referencias?}
-
-Puedes subir un archivo \verb|.bib| que contenga todas tus referencias en estilo BibTeX (puedes buscar la bibliografía de un libro en google añadiendo 'bibtex' al final), creado con JabRef. Luego podrás hacer citas así: \cite{Griffiths:1492149}.
-
-Puedes encontrar un \href{https://www.overleaf.com/help/97-how-to-include-a-bibliography-using-bibtex}{video tutorial aquí} para aprender más acerca de BibTeX.
-
-Espero que esta charla haya sido de tu ayuda. Puedes acceder a Overleaf en el siguiente link: \url{https://www.overleaf.com/}!
 
 \bibliographystyle{abbrv}
 \bibliography{referencias}
 
-\blindtext 
-
-\begin{equation}
-\label{eq:emc}
-e = mc^2
-\end{equation}
 
 \blindtext
 
