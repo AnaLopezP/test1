@@ -155,19 +155,68 @@ implementado, basta con actualizar el repositorio de patrones R para reconfigura
 
 El mecanismo propuesto anteriormente es muy útil para reconocer acciones sencillas, pero las actividades complejas implican un gran número de variables y requieren mucho más tiempo. Por lo tanto, la DTW tiende a volverse imprecisa, y se requieren modelos probabilísticos. De todos los modelos existentes, HMM es el más adecuado para escenarios industriales y procesos impulsados por el hombre.
 
-AQUI FALTA UN PARRAFO CON LA ECUACION
+A partir de la fase anterior, el universo de posibles movimientos simples
+reconocido es M= (m_i,¡=1,...,K). Además, se define un universo de estado U= (u_i,i=1,...,Q), describiendo todos los estados que las personas pueden cruzar mientras se realiza cualquiera de las acciones estudiadas.
+
+Luego, un conjunto de observaciones O = (o_i,¡ = 1,..., Z_o) (movimientos simples reconocidos
+en la fase anterior) también se considera, así como la secuencia de V= (o_i,i=1,...,Z_v) que describe la acción a por modelado por HMM. En este caso inicial, estamos asumiendo que cada observación corresponde a un nuevo estado, por lo que Z_v=Z_o .Entonces,se calculan tres matrices: i) la matriz transitoria A(10) que describe la probabilidad del estado u_j después del estado u_i, ii) la matriz de observación (11) que describe la probabilidad de observación o_i causada por el estado u_j independientemente de k; y (hasta) la matriz de probabilidad inicial (12).
+
+\begin{equation}
+  A = [a_i,j] a_i,j = P(v_k = u_j | v_k-1 = u_i)
+\end{equation}
+
+\begin{equation}
+  B = [b_j(o_i)]  b_j(o_i) = P(X_k = o_i | v_k = u_j )
+\end{equation}
+
+\begin{equation}
+  \prod =  [\varpi_i] \varpi_i = P(v_1 = u_i)
+\end{equation}
+
+A continuación, el HMM para cada actividad compleja $/lambda$ que se reconoce se describe por
+estos tres elementos anteriores (13).
+
+\begin{equation}
+  \lambda_i = \{A_i, B_i, \prod_i\}
+\end{equation}
+
 
 Además, se hacen dos hipótesis: i) la hipótesis de Markov (14), según la cual cualquier Estado depende únicamente del anterior; y ii) la hipótesis de la independencia (15), según la cual cualquier secuencia de observación depende únicamente del Estado actual y no de estados u observaciones anteriores.
 
-FORMULA
+\begin{equation}
+  P(v_k | v-1, ..., v_k-1) = P(v_k | v_k-1)
+\end{equation}
+
+
+\begin{equation}
+  P(o_k|o_1, ..., o_k-1, v_1, ..., v_k) = P(o_k 1 v_k)
+\end{equation}
+
+
 
 Para evaluar el modelo y reconocer la actividad que realizan los usuarios, en este trabajo utilizamos un enfoque tradicional (16). Aunque los algoritmos de avance han demostrado ser más eficientes, para este trabajo inicial estamos implementando directamente la expresión de evaluación en su forma tradicional.
 
-FORMULA
+\begin{equation}
+  P(O | \lambda) = \sum_{v}P(O|V, \lambda)P(V|\lambda) = \sum_{v}(\prod_{i=1}^{Z_o}P(o_i|v_i, \lambda))(\varpi_v1 \cdot a_v1v2 \cdot ... \cdot a_v_(zv-1)v_zv) = \sum_{v1, v2, ..., v_zv} \varpi_v1 \cdot b_v1(o_1) \cdot a_v1v2 \cdot b_v2(o_2) \cdot ... \cdot a_v_(zv-1)v_zvb \cdot b_vzv(o_zo)
+\end{equation}
+
+
 
 El proceso de aprendizaje también se aplicó de la manera más sencilla. Se emplearon definiciones estadísticas para matriz transitoria, matriz de observación y matriz de probabilidad inicial. En particular, se utilizó la definición de probabilidad de Laplace para estimar estas tres matrices a partir de estadísticas sobre las actividades estudiadas (17-19). El operador count(∙) indica el número de veces que ocurre un evento.
 
-FORMULA(17)
+\begin{equation}
+  a_i,j =  P(u_j | u_i) = (contar(u_j sigue u_i))\div contar(u_j)
+\end{equation}
+
+
+\begin{equation}
+  b_j(o_i) = P(o_i | u_j) = (contar(o_i es observado en el estado u_j))\div count(u_j)
+\end{equation}
+
+
+\begin{equation}
+  \varpi_i = P(v_1 = u_i) = (contar(v_1 = u_i))\div contar(v_1)
+\end{equation}
 
 
 \section{Validación experimental: aplicación y resultados}
