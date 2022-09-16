@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/NixOS.org) (preloaded format=pdflatex 2022.2.10)  15 SEP 2022 17:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/NixOS.org) (preloaded format=pdflatex 2022.2.10)  16 SEP 2022 12:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -759,12 +759,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count307
 \l__pdf_internal_box=\box60
-) (./main.aux
-LaTeX Info: Redefining \. on input line 25.
-LaTeX Info: Redefining \% on input line 25.
-LaTeX Info: Redefining \. on input line 26.
-LaTeX Info: Redefining \% on input line 26.
-)
+) (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
@@ -889,4 +884,9 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 41.
 
 
-(/nix/store/wgzkhxc19ycsvcd3bqk44vyyvyfy59nb-texlive-
+(/nix/store/wgzkhxc19ycsvcd3bqk44vyyvyfy59nb-texlive-combined-full-2021.2021040
+8/share/texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{/nix/store/wgzkhxc19ycsvcd3bqk44vyyvyfy59nb-texlive-combi

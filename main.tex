@@ -126,26 +126,34 @@ FORMULA(17)
 
 \section{Validación experimental: aplicación y resultados}
 
-También pueden añadirse comentarios en el margen del pdf compilado con el comando todo \todo{¡Comment en el margen!}, como se muestra en el ejemplo de la derecha. También puedes añadirlos dentro del texto:
+Con el fin de evaluar el desempeño de la solución propuesta, se diseñó y llevó a cabo una validación experimental. Un escenario industrial se emuló en algunas grandes salas de la Universidad Politécnica de Madrid. El escenario representaba una empresa tradicional que fabricaba productos artesanales. En particular, se emuló a un pequeño fabricante de PCB (placas de circuito impreso).
+Con el fin de captar información sobre el comportamiento de las personas, los participantes recibieron un guante cibernético, incluyendo acelerómetros y un lector RFID [19]. Los objetos alrededor de los escenarios se identificaron con una etiqueta RFID, por lo que la plataforma de hardware propuesta puede identificar la posición de la mano (gesto) y los objetos con los que las personas interactúan.
+Se definió y reconoció una lista de doce actividades complejas diferentes utilizando la tecnología propuesta. La Tabla 1 describe las doce actividades definidas, incluyendo una breve descripción de ellas.
 
-\todo[inline, color=green!40]{Este es un comentario dentro del texto.}
-
-\subsection{¿Cómo añadir tablas en mi \TeX?}
-
-Usa los comandos table y tabular para iniciar una tabla simple --- mira la tabla~\ref{tab:tabla ejemplo}, como ejemplo. 
+%Vamos a crear la tabla.
 
 \begin{table}
 \centering
 \begin{tabular}{l c r} 
-%nùmero de columnas: 3
-l para left & c para centro & r para derecha \\ \hline
+%nùmero de columnas: 2
+Actividad & Descripción \\ \hline
 Ejemplo & Centrado & Alineado a la\\
 Izquierda & 13 & Derecha
 \end{tabular}
-\caption{\label{tab:tabla ejemplo}Una simple tabla.}
+\caption{\label{tab:tabla ejemplo}Descrpcion de actividades complejas.}
 \end{table}
 
-\subsection{¿Cómo escribir (expresiones) Matemáticas?}
+Participaron en el experimento dieciocho personas (18). Se pidió a las personas que realizaran las actividades en un número aleatorio. El orden real, así como el orden en que se reconocen las actividades, fueron almacenados por un proceso de software de supervisión. Se evaluó la tasa global de éxito de toda la solución, identificando (además) la misma tasa para cada una de las fases existentes.
+
+Para evaluar la mejoría obtenida en comparación con soluciones similares existentes, se emplearon las mismas secuencias físicas de datos para alimentar una solución estándar de reconocimiento de patrones basada únicamente en HMM. Utilizando programas informáticos de procesamiento de datos estadísticos, se extraen algunos resultados relevantes.
+La Figura 4 representa la tasa media de éxito de tres casos: la solución global, la primera fase (DTW) y la segunda fase (HMM). Además, también se incluye la tasa de éxito del enfoque tradicional basado en la HMM. Como puede verse, la tecnología propuesta es, globalmente, alrededor de un 9$\%$ mejor que las técnicas tradicionales de reconocimiento de patrones basadas exclusivamente en HMM. Además, la primera fase (basada en DTW) es aproximadamente un 20$\%$ peor que la segunda fase (HMM), lo cual es significativo ya que las técnicas de Warping Dinámico del Tiempo son más débiles por defecto.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]\caption{\label{fig:Figura3}Tasa media de éxito de la solución propuesta.}
+\end{figure}
+
+\section{Conclusiones y Futuros Trabajos}
 
 \LaTeX{} es buenísimo para escribir ecuaciones. Para escribir variables o ecuaciones dentro del texto lo podemos poner entre signos de pesos y luego podemos seguir escribiendo, esto funciona si queremos escribir un símbolo como $\nabla$, $\pi$, $\beta$, $\Omega$, $\aleph$, etc.
 \begin{equation}
