@@ -16,5 +16,15 @@ print('Prophet %s' % fbprophet.__version__)
 path = '../input/corn2015-2017/corn2013-2017.txt'
 df = pd.read_csv(path, sep=',',header=None, names=['date','price'])
 df['date'] = pd.to_datetime(df['date'])
+
 # show first few rows
 df.head()
+import plotly.express as px
+fig = px.line(df, x="fecha", y="price",
+              hover_data={"date": "|%d %B %Y"},
+              title='Corn Price')
+fig.update_xaxes(
+    dtick="M12",
+    tickformat="%Y",
+    ticklabelmode="period")
+fig.show()
